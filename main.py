@@ -1,7 +1,7 @@
 import discord
 import requests
 import json
-import notice
+from cogs import test
 
 json_open = open('key.json', 'r')
 json_load = json.load(json_open)
@@ -21,7 +21,7 @@ async def on_message(message):
     if message.author == client.user:
         return  
     
-    res = notice.main()
+    res = test.main()
     await message.channel.send(res)
 
 client.run(TOKEN)
